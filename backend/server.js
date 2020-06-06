@@ -4,7 +4,7 @@ const http= require('http');
 const PORT = process.env.PORT || 5000 ;
 const app = express();
 app.use(express.json())
-const {addUser,removeUSer,getUser,getUsersInRoom} =require('./Users')
+const {addUser,removeUser,getUser,getUsersInRoom} =require('./Users')
 
 const server= http.createServer(app);
 
@@ -24,7 +24,9 @@ io.on('connection', (socket)=>{
     socket.on('join',({name,room},callback)=>{
         const {error,user}=addUser({id:socket.id,name,room});
 
+
         if(error) return callback(error);
+        console.log(user)
         socket.join(user.room);
         
 
@@ -33,14 +35,19 @@ io.on('connection', (socket)=>{
 
         callback();
 
-    });
+    })
 
     socket.on('sendMessage',(message,callback)=>{
-        const user=getUser(socket.id)
+        console.log(socket.id)
+        const user=getUser(socket.id);
+        console.log(user)
+        console.log(message);
         io.to(user.room).emit('message',{user:user.name,text:message});
+        callback();
     })
 
     socket.on('disconnect', ()=>{
+        const user = removeUser(socket.id);
         console.log('User left !!!!! ')
     })
 });

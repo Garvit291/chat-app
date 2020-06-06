@@ -3,6 +3,8 @@ import queryString from  'query-string';
 import io from 'socket.io-client';
 import './Chat.css';
 import Infobar from './../Infobar/Infobar.js';
+import Input from './../Input/Input.js';
+import Messages from './../Messages/Messages.js';
 let socket;
 
 
@@ -33,12 +35,11 @@ const Chat = () =>{
         }
     },[ENDPOINT,window.location.search]);
 
-    useEffect(()=>{
-        socket.on('message',(message)=>{
-            setMessages([...messages,message]);
-
-        })
-    },[messages]);
+    useEffect(() => {
+        socket.on('message', message => {
+          setMessages(messages => [ ...messages, message ]);
+        });
+      }, []);
 
     const sendMessage=(event) =>{
         event.preventDefault();
@@ -47,13 +48,13 @@ const Chat = () =>{
             socket.emit('sendMessage',message,()=>setMessage(''));
         }
     }
-    console.log(message,messages);
-
 
     return(
         <div className='outerContainer'>
             <div className='container'>
             <Infobar room={room}/>
+            <Messages messages={messages} name={name}/>
+            <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>
             </div>
         </div>
         
