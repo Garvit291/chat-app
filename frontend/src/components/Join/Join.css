@@ -18,7 +18,7 @@ html, body {
     text-align: center;
     height: 100vh;
     align-items: center;
-    background-color: #1A1A1D;
+    background-color: #252a34;
   }
   
   .joinInnerContainer {
@@ -30,26 +30,28 @@ html, body {
     border-radius: 6px;
     padding: 15px 20px;
     width: 100%;
+    font-size: medium;
   }
   
   .heading {
-    color: white;
+    color:#eaeaea;
     font-size: 4.5em;
     padding-bottom: 10px;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #ff2e63;
+    font-family: 'Fredoka One', cursive;
   }
   
   .button {
       color: #fff !important;
       text-transform: uppercase;
       text-decoration: none;
-      background: #2979FF;
+      background: #ff2e63;
       padding: 18px;
       border-radius: 6px;
       display: inline-block;
       border: 2px solid white ;
       width: 100%;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
   }
   
   .mt-20 {
@@ -71,3 +73,6 @@ html, body {
   button:focus {
     outline: 0;
   }
+
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Indie+Flower&family=Shadows+Into+Light&display=swap');
+  
