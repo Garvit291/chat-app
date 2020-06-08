@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 import {BrowserRouter as Router , Route} from 'react-router-dom';
 
@@ -13,7 +14,10 @@ const App = () =>{
             <Route path="/" exact component={Join}/>
             <Route path="/chat"  component={Chat}/>
         </Router>
+        <div className='f'>
         <Footer/>
+        </div>
+        
         </div>
     );
 };

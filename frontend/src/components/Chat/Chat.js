@@ -33,7 +33,7 @@ const Chat = () =>{
             socket.emit('disconnect');
             socket.off();
         }
-    },[ENDPOINT,window.location.search]);
+    },[ENDPOINT]);
 
     useEffect(() => {
         socket.on('message', message => {
@@ -51,7 +51,7 @@ const Chat = () =>{
 
     return(
         <div className='outerContainer'>
-            <div className='container'>
+            <div className='container shadow-5'>
             <Infobar room={room}/>
             <Messages messages={messages} name={name}/>
             <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>

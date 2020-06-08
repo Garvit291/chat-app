@@ -58,7 +58,7 @@ html, body {
     margin-top: 20px;
   }
   
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (min-width: 280px) and (max-width: 480px) {
     .joinOuterContainer {
       height: 100%;
     }
@@ -73,6 +73,14 @@ html, body {
   button:focus {
     outline: 0;
   }
+  @media (min-width: 480px) and (max-width: 940px) {
+    .joinOuterContainer{
+      height: 100%;
+    }
+  }
+
+
+
 
   @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Indie+Flower&family=Shadows+Into+Light&display=swap');
   

@@ -31,7 +31,7 @@ io.on('connection', (socket)=>{
         
 
         socket.emit('message',{user:'admin' , text:`${user.name} Welcome to the room ${user.room}`});
-        socket.broadcast.to(user.room).emit('message',{user:'admin', text:`${user.name} has joined the room`})
+        socket.broadcast.to(user.room).emit('message',{user:'Admin', text:`${user.name} has joined the room`})
 
         callback();
 
