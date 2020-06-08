@@ -2,6 +2,7 @@
     display: flex;
     border-top: 4px solid #ff2e63;
     height: 40px;
+    background-color: #ff2e63;
   }
   
   .input {
@@ -11,6 +12,7 @@
     width: 80%;
     font-size: 1.2em;
     border-radius: 4px;
+    height: 20px;
   }
   
   input:focus, textarea:focus, select:focus{
@@ -22,9 +24,16 @@
     text-transform: uppercase;
     text-decoration: none;
     background: #ff2e63;
-    padding: 20px;
+    padding: 5%;
     display: inline-block;
     border: none;
     width: 20%;
     height: 58px;
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+  .sendButton{
+    height: 20px;
+    padding-top: 10px;
+  }
   }
