@@ -16,7 +16,6 @@ const Infobar = ({room}) =>{
         </div>
     </div>
     );
-
 }
 
 export default Infobar;
